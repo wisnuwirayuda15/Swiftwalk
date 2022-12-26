@@ -22,10 +22,8 @@ return new class extends Migration
             $table->enum('gender', ['Laki-laki', 'Perempuan']);
             $table->string('number');
             $table->string('password');
-            $table->json('cart')->nullable();
             $table->rememberToken();
             $table->timestamps();
-            
         });
     }
 
