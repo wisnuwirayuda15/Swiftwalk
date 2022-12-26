@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('number');
             $table->string('password');
             $table->json('cart')->nullable();
-            $table->json('wishlist')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
