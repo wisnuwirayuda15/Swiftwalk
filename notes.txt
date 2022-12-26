@@ -1,5 +1,5 @@
--function destroy di Admin dan User Controller masih ter comment
--tambahin animasi pas nge scroll
+-function destroy di Admin dan User Controller masih ter comment [o]
+-tambahin animasi pas nge scroll [o]
 -edit catalog
 -cart & checkout
 -search
