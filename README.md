@@ -4,3 +4,8 @@
 ## Kelompok 5 - SI-44-06
 
 Repository ini dibuat bertujuan untuk memenuhi tugas besar mata kuliah Pengembangan Aplikasi Website
+
+
+## Here's some preview of our work
+![Homepage](https://github.com/wisnuwirayuda15/TUBES_WAD/blob/master/public/img/screenshots/1.png)
+
