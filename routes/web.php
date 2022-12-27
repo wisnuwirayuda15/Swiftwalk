@@ -53,8 +53,11 @@ Route::get('/wishlist/total', [CatalogController::class, 'totalWishlist'])->midd
 Route::post('/wishlist', [CatalogController::class, 'addWishlist'])->middleware('auth')->name('add_wishlist');
 Route::delete('/wishlist/{id}', [CatalogController::class, 'removeWishlist'])->middleware('auth')->name('remove_wishlist');
 Route::get('/detail/{id}', [CatalogController::class, 'detail'])->name('detail');
-Route::post('/admin/dashboard/catalog/add', [CatalogController::class, 'addItem'])->middleware('admin')->name('add_item');
+Route::post('/admin/dashboard/catalog/add', [CatalogController::class, 'store'])->middleware('admin')->name('add_item');
 Route::delete('/admin/dashboard/catalog/{id}', [CatalogController::class, 'destroy'])->middleware('admin')->name('remove_item');
+Route::get('/admin/dashboard/catalog/edit/{id}', [CatalogController::class, 'indexUpdate'])->middleware('admin')->name('index_update_item');
+Route::put('/admin/dashboard/catalog/{id}', [CatalogController::class, 'update'])->middleware('admin')->name('update_item');
+Route::post('/', [CatalogController::class, 'search'])->middleware('auth')->name('search');
 
 
 

@@ -15,11 +15,11 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             @if (!Request::is('admin/dashboard*'))
-                <form id="search-bar-navbar" class="nav-item" role="search">
+                <form action="{{ route('search') }}" method='POST' id="search-bar-navbar" class="nav-item" role="search" >
                     @csrf
                     <div class="input-group search-bar nav-padding">
                         <input type="text" class="form-control search-bar"
-                            placeholder="Cari sneakers lokal incaranmu...">
+                            placeholder="Cari sneakers lokal incaranmu..." name="search" id="search" value="{{ isset($keyword) ? $keyword : '' }}">
                         <button class="btn search-btn d-flex" type="submit"><i
                                 class="fa-solid fa-magnifying-glass"></i></button>
                     </div>

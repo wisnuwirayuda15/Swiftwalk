@@ -56,7 +56,7 @@
                                                 <td>{{ $item->sold }}</td>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <a href="{{ route('detail', $item->id) }}" class="detail-catalog-btn btn btn-primary mx-2"><i class="fa-xl fa-solid fa-eye"></i></a>
+                                                        <a href="{{ route('detail', $item->id) }}" class="detail-catalog-btn btn btn-primary mx-2"><i class="fa-xl fa-solid fa-pen-to-square"></i></a>
                                                         <form action="{{ route('remove_item', $item->id) }}" method="post">
                                                             @csrf
                                                             @method('delete')

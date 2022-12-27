@@ -1,4 +1,4 @@
-<div class="container text-center maintenance">
+<div class="container text-center maintenance" data-aos="fade-up" data-aos-duration="1000">
     <div class="row">
         <div class="col-12">
             <img src="/img/maintenance.png" alt="maintenance" class="img-fluid mb-3"

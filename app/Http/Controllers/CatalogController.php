@@ -80,7 +80,7 @@ class CatalogController extends Controller
         ]);
     }
 
-    public function addItem(Request $request)
+    public function store(Request $request)
     {
         $request->validate(
             [
@@ -129,5 +129,36 @@ class CatalogController extends Controller
         return back()
             ->with('alert', 'success')
             ->with('text', $item->name . ' berhasil dihapus.');
+    }
+
+    public function indexUpdate($id)
+    {
+    }
+
+    public function update($id)
+    {
+        $item = Catalog::where('id', $id)->first();
+
+        @unlink(public_path('/img/product/') . $item->image);
+
+        $item->delete();
+
+        return back()
+            ->with('alert', 'success')
+            ->with('text', $item->name . ' berhasil dihapus.');
+    }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->search;
+        $result = Catalog::where('name', 'LIKE', "%$keyword%")
+            ->orwhere('description', 'LIKE', "%$keyword%")
+            ->orwhere('price', 'LIKE', "%$keyword%")
+            ->get();
+        return view('home', [
+            'title' => 'Hasil pencarian untuk "' . $keyword . '"',
+            'keyword' => $keyword,
+            'result' => $result
+        ]);
     }
 }
