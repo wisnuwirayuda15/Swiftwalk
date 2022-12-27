@@ -50,7 +50,7 @@
 
                         <h1 class="fw-bol">Rp {{ number_format($item->price, 0, '', '.') }}</h1>
                         <a id="wishlist_icon_btn" href="#" class="btn btn-danger mt-3 fs-5" data-mdb-toggle="tooltip"
-                            data-mdb-placement="bottom" title="Tambah ke wishlist" data-catalog-id="{{ $item->id }}">
+                            data-mdb-placement="bottom" title="{{ $wishlist == 0 ? 'Tambha ke' : 'Hapus dari' }} wishlist" data-catalog-id="{{ $item->id }}">
                             <i class="{{ $wishlist == 0 ? 'fa-regular' : 'fa-solid' }} fa-heart"></i>
                         </a>
 

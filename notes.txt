@@ -2,5 +2,5 @@
 -tambahin animasi pas nge scroll [o]
 -edit catalog
 -cart & checkout
--search
+-search [o]
 -hapus wishlist dari page wishlist

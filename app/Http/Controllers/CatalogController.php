@@ -66,11 +66,14 @@ class CatalogController extends Controller
         ])->delete();
         return back()
             ->with('alert', 'success')
-            ->with('Produk berhasil dihapus dari wishlist!');
+            ->with('text', Catalog::where('id', $id)->first()->name . ' berhasil dihapus dari wishlist!');
     }
 
     public function detail($id)
     {
+        if (!Catalog::get()->contains($id)) {
+            return redirect('404');
+        }
         $wishlist = Wishlist::countWishlist($id);
         $item = Catalog::where('id', $id)->first();
         return view('detail', [
@@ -151,10 +154,15 @@ class CatalogController extends Controller
     public function search(Request $request)
     {
         $keyword = $request->search;
+        // dd($keyword);
         $result = Catalog::where('name', 'LIKE', "%$keyword%")
             ->orwhere('description', 'LIKE', "%$keyword%")
             ->orwhere('price', 'LIKE', "%$keyword%")
             ->get();
+        if (strlen($keyword) == 0 || $keyword == null) {
+            $keyword = '';
+            $result = [];
+        }
         return view('home', [
             'title' => 'Hasil pencarian untuk "' . $keyword . '"',
             'keyword' => $keyword,
