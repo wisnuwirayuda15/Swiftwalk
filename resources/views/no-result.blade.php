@@ -1,7 +1,7 @@
 <div class="container text-center maintenance" data-aos="fade-up" data-aos-duration="1000">
     <div class="row">
         <div class="col-12">
-            <img src="/img/not-found.png" alt="maintenance" class="img-fluid mb-3" style="width: auto; height: 400px">
+            <img src="/img/not-found.png" alt="no result" class="img-fluid mb-3" style="width: auto; height: 400px">
             @if ($keyword == '')
                 <h2>Anda tidak memasukan kata kunci apapun</h2>
             @else

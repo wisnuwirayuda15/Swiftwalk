@@ -48,53 +48,22 @@
 
                         <hr>
 
-                        <h1 class="fw-bol">Rp {{ number_format($item->price, 0, '', '.') }}</h1>
-                        <a id="wishlist_icon_btn" href="#" class="btn btn-danger mt-3 fs-5" data-mdb-toggle="tooltip"
-                            data-mdb-placement="bottom" title="{{ $wishlist == 0 ? 'Tambha ke' : 'Hapus dari' }} wishlist" data-catalog-id="{{ $item->id }}">
+                        <h1 class="fw-bold">Rp {{ number_format($item->price, 0, '', '.') }},-</h1>
+
+                        <a id="wishlist_icon_btn" class="btn btn-danger mt-3 fs-5" data-mdb-toggle="tooltip"
+                            data-mdb-placement="bottom" title="{{ $wishlist == 0 ? 'Tambah ke' : 'Hapus dari' }} wishlist"
+                            data-catalog-id="{{ $item->id }}">
                             <i class="{{ $wishlist == 0 ? 'fa-regular' : 'fa-solid' }} fa-heart"></i>
                         </a>
 
-                        <a href="#" class="btn btn-primary mt-3 fs-5 mx-lg-3" data-mdb-toggle="tooltip"
-                            data-mdb-placement="bottom" title="Tambah ke keranjang">
-                            <i class="fa-solid fa-cart-plus"></i>
+                        <a id="cart_icon_btn" class="btn btn-primary mt-3 fs-5 mx-lg-2" data-mdb-toggle="tooltip"
+                            data-mdb-placement="bottom" title="{{ $cart == 0 ? 'Masukan ke' : 'Hapus dari' }} keranjang"
+                            data-catalog-id="{{ $item->id }}">
+                            <i class="fa-cart-{{ $cart == 0 ? 'plus fa-regular' : 'xmark fa-solid ' }}"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-@endsection
-
-@section('script')
-    <script>
-        $('#wishlist_icon_btn').click(function(event) {
-            event.preventDefault();
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                url: '/wishlist',
-                method: 'POST',
-                data: {
-                    user_id: {{ auth()->user()->id }},
-                    catalog_id: $(this).data('catalog-id')
-                },
-                success: function(response) {
-                    if (response.alert == 'add_wishlist') {
-                        totalWishlist();
-                        iziToast.success({
-                            message: 'Berhasil ditambahkan ke wishlist!',
-                        });
-                    } else if (response.alert == 'remove_wishlist') {
-                        totalWishlist();
-                        iziToast.error({
-                            message: 'Berhasil dihapus dari wishlist!',
-                        });
-                    }
-                }
-            });
-        });
-    </script>
 @endsection

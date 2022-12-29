@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Catalog;
 use App\Models\Wishlist;
 use Illuminate\Http\Request;
@@ -10,9 +11,56 @@ class CatalogController extends Controller
 {
     public function cart()
     {
+        $cart = Cart::where('user_id', auth()->user()->id)
+            ->join('catalogs', 'catalogs.id', '=', 'carts.catalog_id')
+            ->select('catalogs.*')
+            ->get();
         return view('cart', [
-            'title' => 'Cart'
+            'title' => 'Cart',
+            'cart' => $cart,
+            'total_price' => 0
         ]);
+    }
+
+    public function totalCart()
+    {
+        $count = Cart::where('user_id', auth()->user()->id)->count();
+        return $count;
+    }
+
+    public function addCart(Request $request)
+    {
+        $countCart = Cart::countCart($request->catalog_id);
+        if ($countCart == 0) {
+            Cart::create([
+                'user_id' => auth()->user()->id,
+                'catalog_id' => $request->catalog_id
+            ]);
+            return response()->json([
+                'alert' => 'add_cart',
+                'text' => 'Produk berhasil ditambahkan ke keranjang!'
+            ]);
+        } else {
+            Cart::where([
+                'user_id' => auth()->user()->id,
+                'catalog_id' => $request->catalog_id,
+            ])->delete();
+            return response()->json([
+                'alert' => 'remove_cart',
+                'text' => 'Produk berhasil dihapus dari keranjang!'
+            ]);
+        }
+    }
+
+    public function removeCart($id)
+    {
+        Cart::where([
+            'user_id' => auth()->user()->id,
+            'catalog_id' => $id,
+        ])->delete();
+        return back()
+            ->with('alert', 'success')
+            ->with('text', Catalog::where('id', $id)->first()->name . ' berhasil dihapus dari Keranjang!');
     }
 
     public function wishlist()
@@ -30,7 +78,6 @@ class CatalogController extends Controller
     public function totalWishlist()
     {
         $count = Wishlist::where('user_id', auth()->user()->id)->count();
-        // session(['wishlist_count' => $count]);
         return $count;
     }
 
@@ -39,7 +86,7 @@ class CatalogController extends Controller
         $countWishlist = Wishlist::countWishlist($request->catalog_id);
         if ($countWishlist == 0) {
             Wishlist::create([
-                'user_id' => $request->user_id,
+                'user_id' => auth()->user()->id,
                 'catalog_id' => $request->catalog_id
             ]);
             return response()->json([
@@ -75,11 +122,13 @@ class CatalogController extends Controller
             return redirect('404');
         }
         $wishlist = Wishlist::countWishlist($id);
+        $cart = Cart::countCart($id);
         $item = Catalog::where('id', $id)->first();
         return view('detail', [
             'title' => 'Product Detail',
             'item' => $item,
-            'wishlist' => $wishlist
+            'wishlist' => $wishlist,
+            'cart' => $cart,
         ]);
     }
 

@@ -48,10 +48,13 @@ Route::delete('/profile/account', [UserController::class, 'destroy'])->middlewar
 
 //CatalogController
 Route::get('/cart', [CatalogController::class, 'cart'])->middleware('auth')->name('cart');
+Route::post('/cart', [CatalogController::class, 'addCart'])->middleware('auth')->name('add_cart');
+Route::delete('/cart/{id}', [CatalogController::class, 'removeCart'])->middleware('auth')->name('remove_cart');
+Route::get('/cart/total', [CatalogController::class, 'totalCart'])->middleware('auth')->name('total_cart');
 Route::get('/wishlist', [CatalogController::class, 'wishlist'])->middleware('auth')->name('wishlist');
-Route::get('/wishlist/total', [CatalogController::class, 'totalWishlist'])->middleware('auth')->name('total_wishlist');
 Route::post('/wishlist', [CatalogController::class, 'addWishlist'])->middleware('auth')->name('add_wishlist');
 Route::delete('/wishlist/{id}', [CatalogController::class, 'removeWishlist'])->middleware('auth')->name('remove_wishlist');
+Route::get('/wishlist/total', [CatalogController::class, 'totalWishlist'])->middleware('auth')->name('total_wishlist');
 Route::get('/detail/{id}', [CatalogController::class, 'detail'])->name('detail');
 Route::post('/admin/dashboard/catalog/add', [CatalogController::class, 'store'])->middleware('admin')->name('add_item');
 Route::delete('/admin/dashboard/catalog/{id}', [CatalogController::class, 'destroy'])->middleware('admin')->name('remove_item');

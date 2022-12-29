@@ -49,11 +49,11 @@
                     </div>
                     <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleTouch"
                         data-mdb-slide="prev">
-                        <i class="fa-solid fa-chevron-left fa-3x text-dark"></i>
+                        <i class="fa-solid fa-chevron-left fa-3x"></i>
                     </button>
                     <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleTouch"
                         data-mdb-slide="next">
-                        <i class="fa-solid fa-chevron-right fa-3x text-dark"></i>
+                        <i class="fa-solid fa-chevron-right fa-3x"></i>
                     </button>
                 </div>
             @else

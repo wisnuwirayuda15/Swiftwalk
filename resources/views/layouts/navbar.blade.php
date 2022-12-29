@@ -80,13 +80,13 @@
                             <a class="nav-link" aria-current="page" data-mdb-toggle="tooltip"
                                 data-mdb-placement="bottom" title="Cart" href="{{ route('cart') }}">
                                 <i class="fa-lg fa-solid fa-cart-shopping"></i>
-                                <span class="badge rounded-pill badge-notification bg-danger">99+</span>
+                                <span id="total_cart_badge" class="badge rounded-pill badge-notification bg-danger"></span>
                             </a>
                         @else
                             <a class="nav-link" aria-current="page" data-mdb-toggle="tooltip"
                                 data-mdb-placement="bottom" title="Cart" href="{{ route('cart') }}">
                                 <i class="fa-lg fa-regular fa-cart-shopping"></i>
-                                <span class="badge rounded-pill badge-notification bg-danger">99+</span>
+                                <span id="total_cart_badge" class="badge rounded-pill badge-notification bg-danger"></span>
                             </a>
                         @endif
                     </li>
