@@ -41,13 +41,6 @@
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
                                     </form>
-                                    
-                                    <a id="cart_icon_btn" class="btn btn-primary mt-3 fs-6 px-4"
-                                        data-mdb-toggle="tooltip" data-mdb-placement="bottom"
-                                        title="{{ 0 == 0 ? 'Masukan ke' : 'Hapus dari' }} keranjang"
-                                        data-catalog-id="{{ $item->id }}">
-                                        <i class="fa-cart-{{ 0 == 0 ? 'plus fa-regular' : 'xmark fa-solid ' }}"></i>
-                                    </a>
                                 </div>
                             </div>
                         </div>

@@ -18,4 +18,14 @@ class Catalog extends Model
     {
         return $this->hasMany(Wishlist::class);
     }
+
+    public static function soldCount($sold_data)
+    {
+        foreach ($sold_data as $catalog_id) {
+            $item = Catalog::find($catalog_id);
+            Catalog::where('id', $catalog_id)->update([
+                'sold' => $item->sold += 1
+            ]);
+        }
+    }
 }

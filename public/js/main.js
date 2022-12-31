@@ -67,16 +67,19 @@ $('#product_image_input').change(function (event) {
     const file = this.files[0];
     const fileType = file["type"];
     const validImageTypes = ["image/jpg", "image/jpeg", "image/png", "image/gif", "image/jfif", "image/webp"];
+    const $old_src = $('img#product_image_preview_update').attr('old-src')
     // console.log(file);
     if ($.inArray(fileType, validImageTypes) < 0) {
         $('img#product_image_preview').attr('src', '/img/product-image-placeholder.jpg');
+        $('img#product_image_preview_update').attr('src', $old_src);
         $('#product_image_input').val('')
         Swal.fire({
             icon: 'warning',
-            text: 'Ekstensi file yang didukung: .JPG .JPEG .PNG .GIF .PNG .JPG .JPEG .GIF .JFIF .WEBP'
+            text: 'Ekstensi file yang didukung: .JPG .JPEG .PNG .GIF .JFIF .WEBP'
         })
     } else if (file.size > 5242880) {
         $('img#product_image_preview').attr('src', '/img/product-image-placeholder.jpg');
+        $('img#product_image_preview_update').attr('src', $old_src);
         $('#product_image_input').val('')
         Swal.fire({
             icon: 'warning',
@@ -87,6 +90,7 @@ $('#product_image_input').change(function (event) {
         reader.onload = function (event) {
             // console.log(event.target.result);
             $('img#product_image_preview').attr('src', event.target.result);
+            $('img#product_image_preview_update').attr('src', event.target.result);
         }
         reader.readAsDataURL(file);
     }

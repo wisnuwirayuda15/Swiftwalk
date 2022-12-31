@@ -65,6 +65,12 @@ footer {
     aspect-ratio: 1;
 }
 
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover
+}
+
 .cart-img-frame {
     border-style: solid;
     border-color: black

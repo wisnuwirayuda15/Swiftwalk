@@ -17,8 +17,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 mb-3">
-                <form action="{{ route('add_item') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('update_item', $item->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
+                    @method('put')
                     <div class="mt-5 card" data-aos="fade-up" data-aos-duration="500">
                         <div class="card-header d-flex align-items-center justify-content-between">
                             <a href="{{ route('catalog') }}"><span><i class="fa-regular fa-chevron-left"></i></span>
@@ -30,30 +31,31 @@
                     <div class="mt-4 card" data-aos="fade-up" data-aos-duration="500">
                         <div class="card-header d-flex align-items-center">
                             <span>
-                                <i class="fa-solid fa-folder-arrow-up"></i> Upload Gambar Produk
+                                <i class="fa-solid fa-folder-arrow-up"></i> Ubah Gambar Produk
                             </span>
                         </div>
                         <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                            <img id="product_image_preview" src="/img/product-image-placeholder.jpg"
-                                alt="product_image_preview" class="rounded-6 img-fluid shadow mb-3"
+                            <img id="product_image_preview_update" src="/img/product/{{ $item->image }}"
+                                old-src="/img/product/{{ $item->image }}" alt="product_image_preview"
+                                class="rounded-6 img-fluid shadow mb-3"
                                 style="width: 250px; height: 250px; object-fit: cover" data-mdb-toggle="tooltip"
                                 title="Gambar yang anda pilih akan muncul di sini" data-mdb-placement="right">
-                                <p>
-                                    Ukuran file maksimal 
-                                    <span class="badge badge-dark">5Mb</span> 
-                                    dan format gambar yang didukung: 
-                                    <span class="badge badge-primary">PNG</span>
-                                    <span class="badge badge-secondary">JPG</span>
-                                    <span class="badge badge-success">JPEG</span>
-                                    <span class="badge badge-danger">GIF</span>
-                                    <span class="badge badge-warning">JFIF</span>
-                                    <span class="badge badge-info">WEBP</span>
-                                </p>
+                            <p>
+                                Ukuran file maksimal 
+                                <span class="badge badge-dark">5Mb</span> 
+                                dan format gambar yang didukung: 
+                                <span class="badge badge-primary">PNG</span>
+                                <span class="badge badge-secondary">JPG</span>
+                                <span class="badge badge-success">JPEG</span>
+                                <span class="badge badge-danger">GIF</span>
+                                <span class="badge badge-warning">JFIF</span>
+                                <span class="badge badge-info">WEBP</span>
+                            </p>
                             <input id="product_image_input" name="image" type="file" class="d-none form-control"
-                                accept="image/*" />
+                                accept="image/*" value="" />
                             <button class="icon-product-image-input-btn add-product-image-input-btn">
                                 <div class="product-image-input-icon"></div>
-                                <div class="product-image-input-btn-txt">Pilih Gambar Produk</div>
+                                <div class="product-image-input-btn-txt">Ubah Gambar Produk</div>
                             </button>
                         </div>
                     </div>
@@ -71,28 +73,28 @@
                                 <input required type="text" id="name" name="name" class="form-control"
                                     data-mdb-toggle="tooltip" title="Nama produk minimal 3 karakter, maksimal 50 karakter"
                                     data-mdb-placement="left" placeholder="Contoh: Jelly Shoes"
-                                    value="{{ old('name') }}" />
+                                    value="{{ $item->name }}" />
                             </div>
 
                             <div class="mb-4 d-flex">
                                 <label class="form-label fw-bolder" for="description">Deskripsi Produk</label>
                                 <textarea required type="textarea" id="description" name="description" class="form-control" rows="8"
-                                    placeholder="Contoh: Jelly Shoes adalah jenis sepatu yang terbuat dari bahan karet bening atau transparan, sehingga terlihat seperti sepatu jelly. Jelly Shoes biasanya digunakan selama musim panas karena bahan karetnya yang lembut dan nyaman dipakai saat cuaca panas. Selain itu, Jelly Shoes juga memiliki desain yang unik dan menarik, sehingga banyak orang yang menyukainya hanya karena penampilannya saja.">{{ old('description') }}</textarea>
+                                    placeholder="Contoh: Jelly Shoes adalah jenis sepatu yang terbuat dari bahan karet bening atau transparan, sehingga terlihat seperti sepatu jelly. Jelly Shoes biasanya digunakan selama musim panas karena bahan karetnya yang lembut dan nyaman dipakai saat cuaca panas. Selain itu, Jelly Shoes juga memiliki desain yang unik dan menarik, sehingga banyak orang yang menyukainya hanya karena penampilannya saja.">{{ $item->description }}</textarea>
                             </div>
 
                             <div class="mb-4 d-flex">
                                 <label class="form-label fw-bolder" for="price">Harga Produk (Rupiah)</label>
                                 <input required type="number" id="price" name="price" class="form-control"
                                     data-mdb-placement="left" placeholder="Contoh: 69000 (Rp 69.000)"
-                                    value="{{ old('price') }}" />
+                                    value="{{ $item->price }}" />
                             </div>
                         </div>
                     </div>
                     <div class="d-flex justify-content-end mt-4" data-aos="fade-up" data-aos-duration="500">
                         <a href="{{ route('catalog') }}" class="btn btn-light shadow-sm mx-3 fs-6"><i
                                 class="fa-solid fa-arrow-left"></i> Kembali</a>
-                        <button type="submit" class="pulse-animated-btn fs-6"><i class="fa-solid fa-plus"></i> Tambah
-                            Produk</button>
+                        <button type="submit" class="pulse-animated-btn fs-6"><i class="fa-solid fa-floppy-disk"></i>
+                            Simpan Perubahan</button>
                     </div>
                 </form>
             </div>

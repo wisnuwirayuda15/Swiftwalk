@@ -34,6 +34,15 @@ class AdminController extends Controller
         ]);
     }
 
+    public function indexUpdateItem($id)
+    {
+        $item = Catalog::where('id', $id)->first();
+        return view('dashboard.update-item', [
+            'title' => 'Update Item',
+            'item' => $item
+        ]);
+    }
+
     public function indexUsers()
     {
         return view('dashboard.users', [

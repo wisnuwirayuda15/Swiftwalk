@@ -11,12 +11,10 @@
                     <div class="card-body text-center">
                         @if (auth()->user()->avatar)
                             <img src="/img/avatar/{{ auth()->user()->avatar }}" alt="avatar"
-                                class="rounded-circle img-fluid shadow"
-                                style="width: 150px; height: 150px; object-fit: cover">
+                                class="rounded-circle img-fluid shadow profile-img">
                         @else
                             <img src="/img/{{ auth()->user()->gender == 'Laki-laki' ? 'male-avatar.jpg' : 'female-avatar.jpg' }}"
-                                alt="avatar" class="rounded-circle img-fluid"
-                                style="width: 150px; height: 150px; object-fit: cover">
+                                alt="avatar" class="rounded-circle img-fluid profile-img">
                         @endif
 
                         <h5 class="mt-3">{{ auth()->user()->username }}</h5>

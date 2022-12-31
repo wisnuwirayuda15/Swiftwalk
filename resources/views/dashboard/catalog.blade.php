@@ -56,12 +56,17 @@
                                                 <td>{{ $item->sold }}</td>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <a href="{{ route('detail', $item->id) }}" class="detail-catalog-btn btn btn-primary mx-2"><i class="fa-xl fa-solid fa-pen-to-square"></i></a>
+                                                        <form action="{{ route('index_update_item', $item->id) }}" method="get">
+                                                            @csrf
+                                                            <button id="{{ $item->id }}" type="submit"
+                                                                class="detail-catalog-btn btn btn-sm btn-primary mx-2"><i
+                                                                    class="fa-xl fa-solid fa-pen-to-square"></i></button>
+                                                        </form>
                                                         <form action="{{ route('remove_item', $item->id) }}" method="post">
                                                             @csrf
                                                             @method('delete')
                                                             <button id="{{ $item->id }}" type="submit"
-                                                                class="remove-catalog-btn btn btn-danger"><i
+                                                                class="remove-catalog-btn btn-sm btn btn-danger"><i
                                                                     class="fa-xl fa-solid fa-trash-can-xmark"></i></button>
                                                         </form>
                                                     </div>

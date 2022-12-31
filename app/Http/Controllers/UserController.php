@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\Cart;
 use App\Models\User;
-use Illuminate\Contracts\Auth\UserProvider;
+use App\Models\Catalog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Expr\Cast\Array_;
+use Illuminate\Contracts\Auth\UserProvider;
 
 class UserController extends Controller
 {
@@ -189,5 +192,24 @@ class UserController extends Controller
         return redirect('/')
             ->with('alert', 'success')
             ->with('text', 'Akun anda berhasil dihapus');
+    }
+
+    public function checkoutVerify(Request $request)
+    {
+        $credentials = [
+            'email' => auth()->user()->email,
+            'password' => $request->password,
+        ];
+        if (Auth::attempt($credentials)) {
+            Catalog::soldCount($request->sold_data);
+            Cart::where('user_id', auth()->user()->id)->delete();
+            return back()
+                ->with('alert', 'success')
+                ->with('text', 'Transaksi anda berhasil!');
+        } else {
+            return back()
+                ->with('alert', 'error')
+                ->with('text', 'Password anda salah!');
+        };
     }
 }

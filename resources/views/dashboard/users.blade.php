@@ -68,7 +68,7 @@
                                                         <form action="{{ route('remove_user', $user->id) }}" method="post">
                                                             @csrf
                                                             @method('delete')
-                                                            <button id="{{ $user->id }}" type="submit" class="remove-user-btn btn btn-danger"><i
+                                                            <button id="{{ $user->id }}" type="submit" class="remove-user-btn btn btn-sm btn-danger"><i
                                                                     class="fa-xl fa-solid fa-trash-can-xmark"></i></button>
                                                         </form>
                                                     </div>

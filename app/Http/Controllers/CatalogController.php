@@ -153,19 +153,15 @@ class CatalogController extends Controller
                 'price.required' => 'Harga produk harus diisi',
             )
         );
-
         $image = str_pad(random_int(0, 9999999999), 15, '0', STR_PAD_LEFT) . '.' . $request->image->extension();
-
         $request->image->move(public_path('img/product'), $image);
-
         Catalog::create([
             'name' => $request->name,
             'image' => $image,
             'description' => $request->description,
             'price' => $request->price,
         ]);
-
-        return redirect('/admin/dashboard/catalog')
+        return redirect()->route('catalog')
             ->with('alert', 'success')
             ->with('text', 'Item berhasil ditambahkan!');
     }
@@ -173,37 +169,59 @@ class CatalogController extends Controller
     public function destroy($id)
     {
         $item = Catalog::where('id', $id)->first();
-
         @unlink(public_path('/img/product/') . $item->image);
-
+        Wishlist::where('catalog_id', $id)->delete();
+        Cart::where('catalog_id', $id)->delete();
         $item->delete();
-
         return back()
             ->with('alert', 'success')
             ->with('text', $item->name . ' berhasil dihapus.');
     }
 
-    public function indexUpdate($id)
+    public function update(Request $request, $id)
     {
-    }
-
-    public function update($id)
-    {
-        $item = Catalog::where('id', $id)->first();
-
-        @unlink(public_path('/img/product/') . $item->image);
-
-        $item->delete();
-
-        return back()
+        $request->validate(
+            [
+                'name' => ['min:3', 'max:50', 'required'],
+                'description' => ['required'],
+                'price' => ['numeric', 'required'],
+            ],
+            array(
+                'name.required' => 'Nama produk harus diisi.',
+                'name.min' => 'Nama produk minimal 3 karakter.',
+                'name.max' => 'Nama produk maksimal 50 karakter.',
+                'description.required' => 'Deskripsi produk harus diisi.',
+                'price.numeric' => 'Harga produk harus berupa angka',
+                'price.required' => 'Harga produk harus diisi',
+            )
+        );
+        $item = Catalog::find($id);
+        $old_name = $item->name;
+        if ($request->image) {
+            $request->validate(
+                ['image' => ['image', 'file', 'max:5120']],
+                array('image.image' => 'File tidak didukung.')
+            );
+            @unlink(public_path('/img/product/') . $item->image);
+            $image = str_pad(random_int(0, 9999999999), 15, '0', STR_PAD_LEFT) . '.' . $request->image->extension();
+            $request->image->move(public_path('img/product'), $image);
+        } else {
+            $image = $item->image;
+        }
+        $item->update([
+            'name' => $request->name,
+            'image' => $image,
+            'description' => $request->description,
+            'price' => $request->price
+        ]);
+        return redirect()->route('catalog')
             ->with('alert', 'success')
-            ->with('text', $item->name . ' berhasil dihapus.');
+            ->with('text', $old_name . ' berhasil diupdate.');
     }
 
     public function search(Request $request)
     {
         $keyword = $request->search;
-        // dd($keyword);
         $result = Catalog::where('name', 'LIKE', "%$keyword%")
             ->orwhere('description', 'LIKE', "%$keyword%")
             ->orwhere('price', 'LIKE', "%$keyword%")
