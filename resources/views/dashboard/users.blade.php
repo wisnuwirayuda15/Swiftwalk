@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 mb-3">
-                    <div class="mt-5 card" data-aos="fade-up" data-aos-duration="500">
+                    <div class="mt-5 card" data-aos="fade-up" data-aos-duration="1000">
                         <div class="card-header">
                             <a href="{{ route('dashboard') }}"><span><i class="fa-regular fa-chevron-left"></i></span>
                                 Dashboard</a>

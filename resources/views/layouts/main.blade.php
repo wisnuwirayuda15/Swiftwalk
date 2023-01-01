@@ -51,6 +51,8 @@
 
 </head>
 
+<h3 class="loading-animation"></h3>
+
 <body style="background-color: rgb(255, 255, 255)">
 
     <header>

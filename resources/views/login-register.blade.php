@@ -4,7 +4,8 @@
     <style>
         nav,
         footer,
-        .navbar-margin-bottom {
+        .navbar-margin-bottom,
+        .loading-animation {
             display: none !important;
             margin-top: 0 !important;
         }
@@ -135,7 +136,7 @@
                             </div>
 
 
-                            <div class="input-group">
+                            <div class="input-group mb-3">
                                 <span class="input-group-text no-border bg-white">
                                     <i class="fa-solid fa-key"></i>
                                 </span>
@@ -147,6 +148,14 @@
                                         {{ $message }}
                                     </div>
                                 @enderror
+                            </div>
+
+
+                            <div class="form-check mb-2 text-start">
+                                <input required class="form-check-input" type="checkbox" name="terms" id="remember">
+                                <h6>Saya setuju dengan
+                                    <a href="" class="text-primary">syarat dan ketentuan</a>
+                                </h6>
                             </div>
 
 

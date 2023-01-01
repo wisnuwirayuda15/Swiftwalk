@@ -161,3 +161,8 @@ $('#cart_icon_btn').click(function (event) {
         }
     });
 });
+
+
+$(window).on('load', function() {
+    $('.loading-animation').fadeOut('slow');
+});

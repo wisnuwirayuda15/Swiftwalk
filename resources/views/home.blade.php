@@ -17,7 +17,7 @@
         @endif
     @else
         <div class="text-center container py-5">
-            <form action="{{ route('search') }}" method='POST' id="search-bar-mobile" class="nav-item" role="search">
+            <form action="{{ route('search') }}" method='POST' id="search-bar-mobile" class="nav-item" role="search" data-aos="fade-up" data-aos-duration="1000">
                 @csrf
                 <div class="input-group search-bar nav-padding">
                     <input type="text" class="form-control search-bar" placeholder="Cari sneakers lokal incaranmu..."
@@ -57,7 +57,7 @@
                     </button>
                 </div>
             @else
-                <h1 class="mb-5 animate__animated animate__fadeInUp">
+                <h1 class="mb-5" data-aos="fade-up" data-aos-duration="1000">
                     Hasi pencarian untuk "<strong>{{ $keyword }}</strong>"
                 </h1>
             @endif

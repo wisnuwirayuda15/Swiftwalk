@@ -1,13 +1,13 @@
 @extends('layouts.main')
 
 @section('main')
-    <section class="container h-100 animate__animated animate__fadeInUp">
+    <section class="container h-100" data-aos="fade-up" data-aos-duration="1000">
         <div class="card mb-4 shadow text-center text-dark mt-5  ">
             <h2 class="fw-bold mt-2"><i class="fas fa-cog fa-spin"></i> User Profile <i class="fas fa-cog fa-spin"></i></h2>
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <div class="card mb-4 shadow animate__animated animate__fadeIn">
+                <div class="card mb-4 shadow">
                     <div class="card-body text-center">
                         @if (auth()->user()->avatar)
                             <img src="/img/avatar/{{ auth()->user()->avatar }}" alt="avatar"
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="col-lg-8">
-                <div class="card mb-4 shadow animate__animated animate__fadeIn">
+                <div class="card mb-4 shadow">
                     <div class="card-body">
                         <div class="row d-flex align-items-center">
                             <div class="col-sm-3">

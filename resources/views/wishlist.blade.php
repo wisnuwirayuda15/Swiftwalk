@@ -5,7 +5,7 @@
         @if (count($wishlist) == 0)
             @include('no-wishlist')
         @else
-            <h1 class="py-5 mt-4 mb-5">
+            <h1 class="py-5 mt-4 mb-5" data-aos="fade-up" data-aos-duration="1000">
                 <strong>Wujudkan wishlistmu sekarang juga!</strong>
             </h1>
             <div class="row">

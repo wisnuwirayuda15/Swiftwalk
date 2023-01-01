@@ -110,6 +110,7 @@ Route::get('/wishlist/total', [CatalogController::class, 'totalWishlist'])
     ->name('total_wishlist');
 
 Route::get('/detail/{id}', [CatalogController::class, 'detail'])
+    ->middleware('auth')
     ->name('detail');
 
 Route::post('/admin/dashboard/catalog/add', [CatalogController::class, 'store'])
