@@ -35,7 +35,7 @@
                                     <form action="{{ route('remove_wishlist', $item->id) }}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button id="wishlist_icon_btn" type="submit"
+                                        <button id="trash_icon_btn" type="submit"
                                             class="btn btn-danger mx-2 mt-3 px-3 fs-6" data-mdb-toggle="tooltip"
                                             data-mdb-placement="bottom" title="Hapus dari wishlist">
                                             <i class="fa-solid fa-trash"></i>

@@ -93,6 +93,10 @@ Route::get('/cart/total', [CatalogController::class, 'totalCart'])
     ->middleware('auth')
     ->name('total_cart');
 
+Route::post('/cart/qty', [CatalogController::class, 'qtyCart'])
+    ->middleware('auth')
+    ->name('qty_cart');
+
 Route::get('/wishlist', [CatalogController::class, 'wishlist'])
     ->middleware('auth')
     ->name('wishlist');

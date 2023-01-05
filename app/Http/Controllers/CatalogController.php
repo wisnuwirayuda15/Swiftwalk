@@ -6,6 +6,7 @@ use App\Models\Cart;
 use App\Models\Catalog;
 use App\Models\Wishlist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CatalogController extends Controller
 {
@@ -18,14 +19,15 @@ class CatalogController extends Controller
         return view('cart', [
             'title' => 'Cart',
             'cart' => $cart,
-            'total_price' => 0
+            'sold_data' => [],
+            'total_price' => 0,
+            'total_item' => 0
         ]);
     }
 
     public function totalCart()
     {
-        $count = Cart::where('user_id', auth()->user()->id)->count();
-        return $count;
+        return Cart::where('user_id', auth()->user()->id)->count();
     }
 
     public function addCart(Request $request)
@@ -58,6 +60,7 @@ class CatalogController extends Controller
             'user_id' => auth()->user()->id,
             'catalog_id' => $id,
         ])->delete();
+        Session::forget('qty_cart' . $id);
         return back()
             ->with('alert', 'success')
             ->with('text', Catalog::where('id', $id)->first()->name . ' berhasil dihapus dari Keranjang!');
@@ -77,8 +80,7 @@ class CatalogController extends Controller
 
     public function totalWishlist()
     {
-        $count = Wishlist::where('user_id', auth()->user()->id)->count();
-        return $count;
+        return Wishlist::where('user_id', auth()->user()->id)->count();
     }
 
     public function addWishlist(Request $request)
@@ -222,6 +224,7 @@ class CatalogController extends Controller
     public function search(Request $request)
     {
         $keyword = $request->search;
+        $title = 'Hasil pencarian untuk "' . $keyword . '"';
         $result = Catalog::where('name', 'LIKE', "%$keyword%")
             ->orwhere('description', 'LIKE', "%$keyword%")
             ->orwhere('price', 'LIKE', "%$keyword%")
@@ -229,11 +232,19 @@ class CatalogController extends Controller
         if (strlen($keyword) == 0 || $keyword == null) {
             $keyword = '';
             $result = [];
+            $title = 'Anda tidak memasukan kata kunci apapun';
         }
         return view('home', [
-            'title' => 'Hasil pencarian untuk "' . $keyword . '"',
+            'title' => $title,
             'keyword' => $keyword,
             'result' => $result
         ]);
+    }
+
+    public function qtyCart(Request $request)
+    {
+        Session::put('qty_cart' . $request->cart_id, $request->qty);
+        $total_price = 'Rp ' . number_format($request->qty * $request->price, 0, '', '.');
+        return $total_price;
     }
 }

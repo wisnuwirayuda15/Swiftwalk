@@ -99,6 +99,7 @@ class UserController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+        session()->flush();
         return redirect('/')
             ->with('alert', 'success')
             ->with('text', 'Anda berhasil logout!');
@@ -201,7 +202,9 @@ class UserController extends Controller
             'password' => $request->password,
         ];
         if (Auth::attempt($credentials)) {
-            Catalog::soldCount($request->sold_data);
+            foreach ($request->sold_data as $id => $qty) {
+                Catalog::soldCount($id, $qty);
+            };
             Cart::where('user_id', auth()->user()->id)->delete();
             return back()
                 ->with('alert', 'success')

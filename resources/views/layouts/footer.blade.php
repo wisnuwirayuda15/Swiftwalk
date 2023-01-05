@@ -15,7 +15,7 @@
         <ul class="nav col-md-4 justify-content-end">
             <li class="nav-item"><a href="https://www.instagram.com/puutuuu_/" target="_blank" class="nav-link px-2 text-dark">Wisnu</a></li>
             <li class="nav-item"><a href="https://www.instagram.com/daryraa/" target="_blank" class="nav-link px-2 text-dark">Dary</a></li>
-            <li class="nav-item"><a href="https://www.instagram.com/niaasft_/" target="_blank" class="nav-link px-2 text-dark">Intan</a></li>
+            <li class="nav-item"><a href="https://www.instagram.com/intaniafdya_/" target="_blank" class="nav-link px-2 text-dark">Intan</a></li>
             <li class="nav-item"><a href="https://www.instagram.com/qorinaa.a/" target="_blank" class="nav-link px-2 text-dark">Qorina</a></li>
             <li class="nav-item"><a href="https://www.instagram.com/fthrraz/" target="_blank" class="nav-link px-2 text-dark">Riri</a></li>
         </ul>

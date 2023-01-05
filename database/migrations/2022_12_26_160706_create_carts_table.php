@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('user_id');
             $table->bigInteger('catalog_id');
+            $table->bigInteger('quantity')->default(1);
             $table->timestamps();
         });
     }
