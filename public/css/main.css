@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-/* @import url('https://fonts.cdnfonts.com/css/cera-round-pro'); */
 
 * {
     font-family: 'Montserrat', sans-serif;
-    /* font-family: cera-round-pro, "Helvetica Neue", Helvetica, Arial, sans-serif;; */
     margin: 0;
     padding: 0;
 }
@@ -35,10 +33,6 @@
 .ohhappiness-gradient-bg {
     background: var(--ohhappiness-gradient-bg)
 }
-
-/* .container{
-    border-style: solid;
-} */
 
 html,
 body {
@@ -111,15 +105,20 @@ a:hover {
 }
 
 .login-register-left-box {
-    /* background-color: rgb(46, 196, 182); */
     width: 50%;
 }
 
 .login-register-left-box .logo {
     max-width: 100%;
     height: auto;
-    width: 20%;
-    padding-left: 20px;
+    width: 70%;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.navbar-brand .logo {
+    height: 40px;
+    width: auto;
 }
 
 .login-register-left-box .login-register-cover {

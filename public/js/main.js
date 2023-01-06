@@ -247,12 +247,18 @@ $('input[name=quantity]').change(function (event) {
     }
     qtyAndPrice(id, $('input[id=qty_cart' + id + ']').val(), price);
 });
+
+
+
 $('button#plus_btn').click(function () {
     const id = $(this).data('id');
     const price = +$('p#item_price' + id).data('value');
     document.getElementById('qty_cart' + id).stepUp();
     qtyAndPrice(id, $('input[id=qty_cart' + id + ']').val(), price);
 });
+
+
+
 $('button#minus_btn').click(function () {
     const id = $(this).data('id');
     const price = +$('p#item_price' + id).data('value');
@@ -262,6 +268,8 @@ $('button#minus_btn').click(function () {
 
 
 
-$(window).on('load', function () {
-    $('.loading-animation').fadeOut('slow');
+$(document).ready(function () {
+    $(window).on('load', function () {
+        $('.loading-animation').fadeOut('slow');
+    });
 });

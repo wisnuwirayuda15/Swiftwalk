@@ -39,9 +39,7 @@
 
                                     <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                                         <!-- Data -->
-                                        <p>
-                                            <strong>{{ $item->name }}</strong>
-                                        </p>
+                                        <p><strong>{{ $item->name }}</strong></p>
                                         <p id="item_price{{ $item->id }}" data-value="{{ $item->price }}">
                                             Rp {{ number_format($price, 0, '', '.') }}
                                         </p>

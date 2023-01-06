@@ -84,7 +84,7 @@ class UserController extends Controller
                 'password.same' => 'Konfirmasi password tidak sesuai.',
                 'username.min' => 'Username minimal 3 karakter.',
                 'username.max' => 'Username maksimal 20 karakter.',
-                'email.unique' => 'Email telah terdaftar dalam database.',
+                'email.unique' => 'Email sudah digunakan.',
                 'email.email' => 'Masukan email yang benar.'
             )
         );

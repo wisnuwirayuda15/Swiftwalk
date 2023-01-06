@@ -4,7 +4,7 @@
             @if (Request::is('admin/dashboard*'))
                 <i class="fa-solid fa-chart-line"></i>‎ ‎ Dashboard
             @else
-                SneakersID
+                <img src="/img/swiftwalk-logo-alpha.png" alt="Swiftwalk Logo" class="logo" />
             @endif
         </a>
 
@@ -15,11 +15,13 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             @if (!Request::is('admin/dashboard*'))
-                <form action="{{ route('search') }}" method='POST' id="search-bar-navbar" class="nav-item" role="search" >
+                <form action="{{ route('search') }}" method='POST' id="search-bar-navbar" class="nav-item"
+                    role="search">
                     @csrf
                     <div class="input-group search-bar nav-padding">
                         <input type="text" class="form-control search-bar"
-                            placeholder="Cari sneakers lokal incaranmu..." name="search" id="search" value="{{ isset($keyword) ? $keyword : '' }}">
+                            placeholder="Cari sneakers lokal incaranmu..." name="search" id="search"
+                            value="{{ isset($keyword) ? $keyword : '' }}">
                         <button class="btn search-btn d-flex" type="submit"><i
                                 class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
@@ -64,13 +66,15 @@
                             <a class="nav-link" aria-current="page" data-mdb-toggle="tooltip"
                                 data-mdb-placement="bottom" title="Wishlist" href="{{ route('wishlist') }}">
                                 <i class="fa-lg fa-solid fa-heart"></i>
-                                <span id="total_wishlist_badge" class="badge rounded-pill badge-notification bg-danger"></span>
+                                <span id="total_wishlist_badge"
+                                    class="badge rounded-pill badge-notification bg-danger"></span>
                             </a>
                         @else
                             <a class="nav-link" aria-current="page" data-mdb-toggle="tooltip"
                                 data-mdb-placement="bottom" title="Wishlist" href="{{ route('wishlist') }}">
                                 <i class="fa-lg fa-regular fa-heart"></i>
-                                <span id="total_wishlist_badge" class="badge rounded-pill badge-notification bg-danger"></span>
+                                <span id="total_wishlist_badge"
+                                    class="badge rounded-pill badge-notification bg-danger"></span>
                             </a>
                         @endif
                     </li>
@@ -80,13 +84,15 @@
                             <a class="nav-link" aria-current="page" data-mdb-toggle="tooltip"
                                 data-mdb-placement="bottom" title="Cart" href="{{ route('cart') }}">
                                 <i class="fa-lg fa-solid fa-cart-shopping"></i>
-                                <span id="total_cart_badge" class="badge rounded-pill badge-notification bg-danger"></span>
+                                <span id="total_cart_badge"
+                                    class="badge rounded-pill badge-notification bg-danger"></span>
                             </a>
                         @else
                             <a class="nav-link" aria-current="page" data-mdb-toggle="tooltip"
                                 data-mdb-placement="bottom" title="Cart" href="{{ route('cart') }}">
                                 <i class="fa-lg fa-regular fa-cart-shopping"></i>
-                                <span id="total_cart_badge" class="badge rounded-pill badge-notification bg-danger"></span>
+                                <span id="total_cart_badge"
+                                    class="badge rounded-pill badge-notification bg-danger"></span>
                             </a>
                         @endif
                     </li>

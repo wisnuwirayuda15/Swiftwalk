@@ -58,7 +58,7 @@
                 </div>
             @else
                 <h1 class="mb-5" data-aos="fade-up" data-aos-duration="1000">
-                    Hasi pencarian untuk "<strong>{{ $keyword }}</strong>"
+                    Hasil pencarian untuk "<strong>{{ $keyword }}</strong>"
                 </h1>
             @endif
             <div class="row">

@@ -21,7 +21,7 @@ use Illuminate\Routing\Route as RoutingRoute;
 
 Route::get('/', function () {
     return view('home', [
-        'title' => 'SneakersID',
+        'title' => 'Swiftwalk',
         'catalogs' => Catalog::get()
     ]);
 })->name('home');

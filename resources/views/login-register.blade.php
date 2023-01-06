@@ -20,12 +20,11 @@
     <div class="login-register-main">
         <!-- login-register-left  -->
         <div class="login-register-left-box">
-            <a href="/">
-                <img src="https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-1.png" alt="" class="logo" />
-            </a>
             <div class="cover-left-box">
-                <h1>SneakersID</h1>
-                <p>Temukan sneaker lokal impianmu hanya di SneakersID</p>
+                <a href="/">
+                    <img src="/img/swiftwalk-logo-alpha.png" alt="Swiftwalk Logo" class="logo rounded-5" />
+                </a>
+                <p>Temukan sneaker lokal impianmu hanya di Swiftwalk</p>
                 <img src="/img/login-register-vector.png" alt="" class="login-register-cover" />
             </div>
         </div>
@@ -154,7 +153,7 @@
                             <div class="form-check mb-2 text-start">
                                 <input required class="form-check-input" type="checkbox" name="terms" id="remember">
                                 <h6>Saya setuju dengan
-                                    <a href="" class="text-primary">syarat dan ketentuan</a>
+                                    <a href="https://policies.google.com/terms" target="_blank" class="text-primary">syarat dan ketentuan</a>
                                 </h6>
                             </div>
 
