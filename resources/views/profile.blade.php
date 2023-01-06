@@ -2,9 +2,6 @@
 
 @section('main')
     <section class="container h-100 mt-5" data-aos="fade-up" data-aos-duration="1000">
-        {{-- <div class="card shadow text-center text-dark mt-5  ">
-            <h2 class="fw-bold mt-2"><i class="fas fa-cog fa-spin"></i> User Profile <i class="fas fa-cog fa-spin"></i></h2>
-        </div> --}}
         <div class="row">
             <div class="col-lg-4">
                 <div class="card mb-4 shadow">
@@ -19,9 +16,7 @@
                             <img src="/img/{{ auth()->user()->gender == 'Laki-laki' ? 'male-avatar.jpg' : 'female-avatar.jpg' }}"
                                 alt="avatar" class="rounded-circle img-fluid profile-img">
                         @endif
-
                         <h5 class="mt-3">{{ auth()->user()->username }}</h5>
-
                         <div class="container">
                             @can('admin')
                                 <p class="badge badge-info">Admin</p>
@@ -32,7 +27,6 @@
                                 <p class="badge badge-success">User</p>
                             @endcan
                         </div>
-
                         <div class="justify-content-center mt-3 mb-2">
                             <hr>
                             @if (auth()->user()->avatar)

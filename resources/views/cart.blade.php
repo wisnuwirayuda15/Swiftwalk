@@ -36,7 +36,6 @@
                                         </div>
                                         <!-- Image -->
                                     </div>
-
                                     <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                                         <!-- Data -->
                                         <p><strong>{{ $item->name }}</strong></p>
@@ -51,10 +50,8 @@
                                                 <i class="fa-solid fa-trash"></i>
                                             </button>
                                         </form>
-
                                         <!-- Data -->
                                     </div>
-
                                     <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                                         <!-- Quantity -->
                                         <div class="d-flex mb-4" style="max-width: 300px">
@@ -87,29 +84,22 @@
                             <img class="me-2" width="60px"
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Bank_Mandiri_logo_2016.svg/2560px-Bank_Mandiri_logo_2016.svg.png"
                                 alt="Mandiri" />
-
                             <img class="me-2" width="60px"
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bank_Central_Asia.svg/2560px-Bank_Central_Asia.svg.png"
                                 alt="BCA" />
-
                             <img class="me-2" width="60px"
                                 src="https://www.bisnisidea.com/wp-content/uploads/2021/07/QRIS-icon.png" alt="Qris" />
-
                             <img class="me-2" width="60px"
                                 src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png"
                                 alt="Paypal" />
-
                             <img class="me-2" width="60px"
                                 src="https://image.cermati.com/v1585904886/o81yliwckjhywelnx13a.png" alt="Gopay" />
-
                             <img class="me-2" width="60px"
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Logo_dana_blue.svg/2560px-Logo_dana_blue.svg.png"
                                 alt="Dana" />
-
                             <img class="me-2" width="60px"
                                 src="https://1.bp.blogspot.com/-Iq0Ztu117_8/XzNYaM4ABdI/AAAAAAAAHA0/MabT7B02ErIzty8g26JvnC6cPeBZtATNgCLcBGAsYHQ/s1000/logo-ovo.png"
                                 alt="Ovo" />
-
                             <img class="me-2" width="60px"
                                 src="https://shopeepay.co.id/src/pages/home/assets/images/2-shopeepay-rectangle-orange2.png"
                                 alt="Shopee pay" />
@@ -149,7 +139,7 @@
                             </ul>
                             <button type="button" class="btn btn-primary btn-lg btn-block" data-mdb-toggle="modal"
                                 data-mdb-target="#staticBackdrop5">
-                                Bayar
+                                Bayar Sekarang
                             </button>
                         </div>
                     </div>

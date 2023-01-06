@@ -45,17 +45,13 @@
                         <span class="text-info">Sneakers</span>
                         <h1 class="fw-bold">{{ $item->name }}</h1>
                         <p>{{ $item->description }}</p>
-
                         <hr>
-
                         <h1 class="fw-bold">Rp {{ number_format($item->price, 0, '', '.') }},-</h1>
-
                         <a id="wishlist_icon_btn" class="btn btn-danger mt-3 fs-5" data-mdb-toggle="tooltip"
                             data-mdb-placement="bottom" title="{{ $wishlist == 0 ? 'Tambah ke' : 'Hapus dari' }} wishlist"
                             data-catalog-id="{{ $item->id }}">
                             <i class="{{ $wishlist == 0 ? 'fa-regular' : 'fa-solid' }} fa-heart"></i>
                         </a>
-
                         <a id="cart_icon_btn" class="btn btn-primary mt-3 fs-5 mx-lg-2" data-mdb-toggle="tooltip"
                             data-mdb-placement="bottom" title="{{ $cart == 0 ? 'Masukan ke' : 'Hapus dari' }} keranjang"
                             data-catalog-id="{{ $item->id }}">

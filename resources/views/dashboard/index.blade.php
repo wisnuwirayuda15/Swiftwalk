@@ -162,10 +162,10 @@
             $('.dataTables_scroll').addClass('mb-4');
             $('.dataTables_length').addClass('mb-4');
 
-            $('#users_table_length').hide();
-            $('#users_table2_length').hide();
-            $('#users_table_paginate').hide();
-            $('#users_table2_paginate').hide();
+            $('#users_table_length').remove();
+            $('#users_table2_length').remove();
+            $('#users_table_paginate').remove();
+            $('#users_table2_paginate').remove();
         })
     </script>
 @endsection

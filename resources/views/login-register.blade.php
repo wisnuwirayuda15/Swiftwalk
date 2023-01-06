@@ -75,8 +75,6 @@
                                     </div>
                                 @enderror
                             </div>
-
-
                             <div class="input-group mb-3">
                                 <span class="input-group-text no-border bg-white">
                                     <i class="fa-solid fa-user"></i>
@@ -90,8 +88,6 @@
                                     </div>
                                 @enderror
                             </div>
-
-
                             <div class="input-group mb-3">
                                 <span class="input-group-text no-border bg-white">
                                     <i class="fa-solid fa-venus-mars"></i>
@@ -103,8 +99,6 @@
                                     <option value="Perempuan">Perempuan</option>
                                 </select>
                             </div>
-
-
                             <div class="input-group mb-3">
                                 <span class="input-group-text no-border bg-white">
                                     <i class="fa-solid fa-phone"></i>
@@ -118,8 +112,6 @@
                                     </div>
                                 @enderror
                             </div>
-
-
                             <div class="input-group mb-3">
                                 <span class="input-group-text no-border bg-white">
                                     <i class="fa-solid fa-lock"></i>
@@ -133,8 +125,6 @@
                                     </div>
                                 @enderror
                             </div>
-
-
                             <div class="input-group mb-3">
                                 <span class="input-group-text no-border bg-white">
                                     <i class="fa-solid fa-key"></i>
@@ -148,16 +138,12 @@
                                     </div>
                                 @enderror
                             </div>
-
-
                             <div class="form-check mb-2 text-start">
                                 <input required class="form-check-input" type="checkbox" name="terms" id="remember">
                                 <h6>Saya setuju dengan
                                     <a href="https://policies.google.com/terms" target="_blank" class="text-primary">syarat dan ketentuan</a>
                                 </h6>
                             </div>
-
-
                             <button type="submit" id="register" class="login-register-btn mt-3 mb-2"><i
                                     class="fa-regular fa-memo-circle-check"></i> Daftar</button>
                         </form>
