@@ -20,6 +20,7 @@ class CatalogController extends Controller
             'title' => 'Cart',
             'cart' => $cart,
             'sold_data' => [],
+            'price_data' => [],
             'total_price' => 0,
             'total_item' => 0
         ]);
@@ -174,6 +175,7 @@ class CatalogController extends Controller
         @unlink(public_path('/img/product/') . $item->image);
         Wishlist::where('catalog_id', $id)->delete();
         Cart::where('catalog_id', $id)->delete();
+        Session::forget('qty_cart' . $id);
         $item->delete();
         return back()
             ->with('alert', 'success')
@@ -244,7 +246,20 @@ class CatalogController extends Controller
     public function qtyCart(Request $request)
     {
         Session::put('qty_cart' . $request->cart_id, $request->qty);
-        $total_price = 'Rp ' . number_format($request->qty * $request->price, 0, '', '.');
-        return $total_price;
+        $total_price = $request->qty * $request->price;
+        $formatted_price = 'Rp ' . number_format($total_price, 0, '', '.');
+        return [$total_price, $formatted_price];
+    }
+
+    public static function inputSoldCount($sold_data)
+    {
+        foreach ($sold_data as $id => $qty) {
+            $item = Catalog::find($id);
+            Catalog::where('id', $id)->update([
+                'sold' => $item->sold += $qty
+            ]);
+        };
+        Cart::where('user_id', auth()->user()->id)->delete();
+        Session::forget('qty_cart' . $id);
     }
 }

@@ -92,7 +92,7 @@
         <script>
             Swal.fire({
                 icon: '{{ session('alert') }}',
-                text: '{{ session('text') }}',
+                text: '{{ session('text') }}'
             });
         </script>
     @endif

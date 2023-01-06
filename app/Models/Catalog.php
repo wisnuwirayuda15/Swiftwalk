@@ -18,12 +18,4 @@ class Catalog extends Model
     {
         return $this->hasMany(Wishlist::class);
     }
-
-    public static function soldCount($id, $qty)
-    {
-        $item = Catalog::find($id);
-        Catalog::where('id', $id)->update([
-            'sold' => $item->sold += $qty
-        ]);
-    }
 }

@@ -9,7 +9,7 @@
                 <div class="col-md-8">
                     <div class="card shadow mb-4" data-aos="fade-up" data-aos-duration="1000">
                         <div class="card-header py-3">
-                            <h5 class="mb-0">Keranjang - {{ count($cart) }} barang</h5>
+                            <h5 class="mb-0">Keranjang</h5>
                         </div>
                         <div class="card-body">
                             @foreach ($cart as $item)
@@ -18,6 +18,7 @@
                                     $sold_data[$item->id] = $qty;
                                     $total_item += $qty;
                                     $price = $item->price * $qty;
+                                    $price_data[$item->id] = $price;
                                     $total_price += $price;
                                 @endphp
                                 <!-- Single item -->
@@ -126,7 +127,7 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0"
                                     data-price="{{ $total_price }}">
-                                    <span id="span_produk" data-value="{{ $total_item }}">Produk ({{ $total_item }})</span>
+                                    <span id="span_produk">Produk ({{ $total_item }})</span>
                                     <span id="span_price">Rp {{ number_format($total_price, 0, '', '.') }}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center px-0"
@@ -156,43 +157,49 @@
                     </div>
                 </div>
             </div>
-        @endif
-    </div>
-    <div class="modal top fade" id="staticBackdrop5" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
-        <div class="modal-dialog modal-dialog-centered text-center d-flex justify-content-center">
-            <div class="modal-content w-75">
-                <div class="modal-body p-4">
-                    @if (auth()->user()->avatar)
-                        <img src="/img/avatar/{{ auth()->user()->avatar }}" alt="avatar"
-                            class="shadow rounded-circle position-absolute top-0 start-50 translate-middle profile-img" />
-                    @else
-                        <img src="/img/{{ auth()->user()->gender == 'Laki-laki' ? 'male-avatar.jpg' : 'female-avatar.jpg' }}"
-                            alt="avatar"
-                            class="shadow rounded-circle position-absolute top-0 start-50 translate-middle profile-img" />
-                    @endif
-                    <form action="{{ route('checkout_verify') }}" method="post">
-                        @csrf
-                        @if (isset($sold_data))
-                            @foreach ($sold_data as $id => $qty)
-                                <input id="sold_data_input{{ $id }}" type="hidden"
-                                    name="sold_data[{{ $id }}]" value="{{ $qty }}">
-                            @endforeach
-                        @endif
-                        <div>
-                            <h5 class="pt-5 my-3">{{ auth()->user()->username }}</h5>
-                            <div class="form-outline">
-                                <input type="password" name="password" id="password" class="form-control" />
-                                <label class="form-label" for="password">Password</label>
-                            </div>
-                            <div id="textExample1" class="form-text mb-4">
-                                Verifikasi password anda
-                            </div>
-                            <button type="submit" class="btn btn-primary">Verify</button>
+            <div class="modal top fade" id="staticBackdrop5" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+                <div class="modal-dialog modal-dialog-centered text-center d-flex justify-content-center">
+                    <div class="modal-content w-75">
+                        <div class="modal-body p-4">
+                            @if (auth()->user()->avatar)
+                                <img src="/img/avatar/{{ auth()->user()->avatar }}" alt="avatar"
+                                    class="shadow rounded-circle position-absolute top-0 start-50 translate-middle profile-img" />
+                            @else
+                                <img src="/img/{{ auth()->user()->gender == 'Laki-laki' ? 'male-avatar.jpg' : 'female-avatar.jpg' }}"
+                                    alt="avatar"
+                                    class="shadow rounded-circle position-absolute top-0 start-50 translate-middle profile-img" />
+                            @endif
+                            <form action="{{ route('checkout_verify') }}" method="post">
+                                @csrf
+                                @foreach ($sold_data as $id => $qty)
+                                    <input id="sold_data_input{{ $id }}" type="hidden"
+                                        name="sold_data[{{ $id }}]" value="{{ $qty }}"
+                                        class="sold-data-input">
+                                @endforeach
+                                @foreach ($price_data as $id => $price)
+                                    <input id="price_data_input{{ $id }}" type="hidden"
+                                        name="price_data[{{ $id }}]" value="{{ $price }}"
+                                        class="price-data-input">
+                                @endforeach
+                                <input id="total_price_input" type="hidden" name="total_price"
+                                    value="{{ $total_price + $total_price * (11 / 100) }}">
+                                <div>
+                                    <h5 class="pt-5 my-3">{{ auth()->user()->username }}</h5>
+                                    <div class="form-outline">
+                                        <input type="password" name="password" id="password" class="form-control" />
+                                        <label class="form-label" for="password">Password</label>
+                                    </div>
+                                    <div id="textExample1" class="form-text mb-4">
+                                        Verifikasi password anda
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Verify</button>
+                                </div>
+                            </form>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endif
     </div>
 @endsection

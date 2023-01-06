@@ -1,6 +1,13 @@
 AOS.init();
 
 
+
+function reload(selector, url) {
+    $(selector).load(url);
+}
+
+
+
 function totalWishlist() {
     $.ajax({
         type: 'GET',
@@ -15,6 +22,7 @@ function totalWishlist() {
         }
     });
 } totalWishlist()
+
 
 
 function totalCart() {
@@ -33,6 +41,7 @@ function totalCart() {
 } totalCart()
 
 
+
 $('a#wishlist_icon_btn').on('click', function () {
     if ($('a#wishlist_icon_btn > svg.fa-heart').attr('data-prefix') == 'fa-regular') {
         $('a#wishlist_icon_btn > svg.fa-heart').attr('data-prefix', 'fa-solid');
@@ -42,6 +51,7 @@ $('a#wishlist_icon_btn').on('click', function () {
         $(this).attr('data-mdb-original-title', 'Tambah ke wishlist');
     }
 });
+
 
 
 $('a#cart_icon_btn').on('click', function () {
@@ -55,6 +65,7 @@ $('a#cart_icon_btn').on('click', function () {
         $(this).attr('data-mdb-original-title', 'Masukan ke keranjang');
     }
 });
+
 
 
 // Add product image input
@@ -97,10 +108,12 @@ $('#product_image_input').change(function (event) {
 });
 
 
+
 $('#login_register_badge').click(function () {
     $('.login-register-right-box').removeClass('animate__fadeInRight');
     $('.login-register-right-box').addClass('animate__fadeOutRight');
 });
+
 
 
 $('#wishlist_icon_btn').click(function (event) {
@@ -131,6 +144,7 @@ $('#wishlist_icon_btn').click(function (event) {
         }
     });
 });
+
 
 
 $('#cart_icon_btn').click(function (event) {
@@ -164,6 +178,37 @@ $('#cart_icon_btn').click(function (event) {
 
 
 
+function productQty() {
+    var qty = 0;
+    $('input.sold-data-input').each(function () {
+        qty += parseInt($(this).val());
+    });
+    $('span#span_produk').text('Produk (' + qty + ')')
+}
+
+
+
+function productPrice() {
+    var price = 0;
+    $('input.price-data-input').each(function () {
+        price += parseInt($(this).val());
+    });
+    var tax = price * (11 / 100);
+    var total_price = price + tax;
+    $('span#span_price').text('Rp ' + price.toLocaleString('id-ID', {
+        minimumFractionDigits: 0
+    }));
+    $('span#span_tax').text('Rp ' + Math.round(tax).toLocaleString('id-ID', {
+        minimumFractionDigits: 0
+    }));
+    $('strong#span_total_price').text('Rp ' + Math.round(total_price).toLocaleString('id-ID', {
+        minimumFractionDigits: 0
+    }));
+    $('input#total_price_input').val(Math.round(total_price));
+}
+
+
+
 function qtyAndPrice(id, qty, price) {
     $.ajaxSetup({
         headers: {
@@ -179,8 +224,11 @@ function qtyAndPrice(id, qty, price) {
             price: price
         },
         success: function (response) {
-            $('p#item_price' + id).text(response);
+            $('p#item_price' + id).text(response[1]);
             $('input#sold_data_input' + id).val(qty);
+            $('input#price_data_input' + id).val(response[0]);
+            productQty();
+            productPrice();
         }
     });
 }

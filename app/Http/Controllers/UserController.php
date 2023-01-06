@@ -9,6 +9,7 @@ use App\Models\Catalog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use PhpParser\Node\Expr\Cast\Array_;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Contracts\Auth\UserProvider;
 
 class UserController extends Controller
@@ -202,13 +203,11 @@ class UserController extends Controller
             'password' => $request->password,
         ];
         if (Auth::attempt($credentials)) {
-            foreach ($request->sold_data as $id => $qty) {
-                Catalog::soldCount($id, $qty);
-            };
-            Cart::where('user_id', auth()->user()->id)->delete();
+            CatalogController::inputSoldCount($request->sold_data);
+            $total_price = 'Rp ' . number_format($request->total_price, 0, '', '.') . ',-';
             return back()
                 ->with('alert', 'success')
-                ->with('text', 'Transaksi anda berhasil!');
+                ->with('text', 'Transaksi anda berhasil!\nTotal belanjamu senilai: ' . $total_price);
         } else {
             return back()
                 ->with('alert', 'error')

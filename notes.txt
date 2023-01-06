@@ -1,6 +1,0 @@
--function destroy di Admin dan User Controller masih ter comment [o]
--tambahin animasi pas nge scroll [o]
--edit catalog [o]
--cart & checkout [o]
--search [o]
--hapus wishlist dari page wishlist [o]
