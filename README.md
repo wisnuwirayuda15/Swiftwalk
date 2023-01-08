@@ -9,7 +9,7 @@ Repository ini dibuat bertujuan untuk memenuhi tugas besar mata kuliah Pengemban
 
 | No | Nama | NIM |
 |-|-|-|
-| 1 | Putu Wisnu Wirayuda Putra | 1202200244 |
+| 1 | <a href="https://www.instagram.com/puutuuu_/" target="_blank" class="nav-link px-2 text-dark">Putu Wisnu Wirayuda Putra</a> | 1202200244 |
 | 2 | Dary Ramadhan Abdussalam | 1202204205 |
 | 3 | Fithri Dwi Nur Azizah | 1202202109 |
 | 4 | Intania Fadya Safitri | 1202201312 |
