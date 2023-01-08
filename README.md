@@ -17,7 +17,7 @@ Repository ini dibuat bertujuan untuk memenuhi tugas besar mata kuliah Pengemban
 
 
 
-## Here's some preview of our work
+## Beberapa preview tampilan website kami
 
 ![Login](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/login.png)
 
