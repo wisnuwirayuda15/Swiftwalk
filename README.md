@@ -1,12 +1,12 @@
-<p align="center"><img src="https://telkomuniversity.ac.id/wp-content/uploads/2019/03/Logo-Telkom-University-png-3430x1174.png" width="400" alt="Logo Telkom University"></p>
+#
+<p align="center"><img src="https://telkomuniversity.ac.id/wp-content/uploads/2019/03/Logo-Telkom-University-png-3430x1174.png" width="370" alt="Logo Telkom University"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="500" alt="Laravel Logo"></p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></p>
-
-## Kelompok 5 - SI-44-06
+# Kelompok 5 - SI-44-06
 
 Repository ini dibuat bertujuan untuk memenuhi tugas besar mata kuliah Pengembangan Aplikasi Website
 
-## Anggota Kelompok
+# Anggota Kelompok
 
 | No  | Nama                                                                     | NIM        |
 | --- | ------------------------------------------------------------------------ | ---------- |
@@ -16,7 +16,7 @@ Repository ini dibuat bertujuan untuk memenuhi tugas besar mata kuliah Pengemban
 | 4   | [Intania Fadya Safitri](https://www.instagram.com/intaniafdya_)          | 1202201312 |
 | 5   | [Qorina Hazhiratul Qudsi Al Ayyubi](https://www.instagram.com/qorinaa.a) | 1202200090 |
 
-## Beberapa preview tampilan website kami
+# Beberapa preview tampilan website kami :
 
 ![Login](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/login.png)
 
