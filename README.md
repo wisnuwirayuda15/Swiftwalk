@@ -1,4 +1,5 @@
 #
+
 <p align="center"><img src="https://telkomuniversity.ac.id/wp-content/uploads/2019/03/Logo-Telkom-University-png-3430x1174.png" width="370" alt="Logo Telkom University"></p>
 <p align="center"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="500" alt="Laravel Logo"></p>
 
@@ -18,26 +19,50 @@ Repository ini dibuat bertujuan untuk memenuhi tugas besar mata kuliah Pengemban
 
 # Beberapa preview tampilan website kami :
 
+## Login
+
 ![Login](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/login.png)
+
+## Register
 
 ![Register](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/register.png)
 
+## Homepage
+
 ![Homepage](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/homepage.png)
+
+## Search
 
 ![Search](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/search.png)
 
+## Item Detail
+
 ![Detail](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/detail.png)
+
+## Profile
 
 ![Profile](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/profile.png)
 
+## Wishlist
+
 ![Wishlist](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/wishlist.png)
+
+## Cart
 
 ![Cart](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/cart.png)
 
+## Main Dashboard
+
 ![Dashboard](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/dashboard.png)
+
+## Catalogs Management
 
 ![Dashboard: Catalog](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/catalog.png)
 
+## Add Catalog
+
 ![Dashboard: Add Catalog](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/add-catalog.png)
+
+## Users Management
 
 ![Dashboard: Users](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/users.png)
