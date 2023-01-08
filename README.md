@@ -4,6 +4,19 @@
 
 Repository ini dibuat bertujuan untuk memenuhi tugas besar mata kuliah Pengembangan Aplikasi Website
 
+
+## Anggota Kelompok
+
+| Nama | NIM |
+|---------------------------------------------|---------------------|
+| Putu Wisnu Wirayuda Putra | 1202200244 |
+| Dary Ramadhan Abdussalam | 1202204205 |
+| Fithri Dwi Nur Azizah | 1202202109 |
+| Intania Fadya Safitri | 1202201312  |
+| Qorina Hazhiratul Qudsi Al Ayyubi | 1202200090 |
+
+
+
 ## Here's some preview of our work
 
 ![Login](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/login.png)
