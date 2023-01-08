@@ -9,20 +9,21 @@
                         <h5><i class="fa-solid fa-user"></i> User Profile</h5>
                     </div>
                     <div class="card-body text-center">
-                        @if (auth()->user()->avatar)
+                        @isset(auth()->user()->avatar)
                             <img src="/img/avatar/{{ auth()->user()->avatar }}" alt="avatar"
                                 class="rounded-circle img-fluid shadow profile-img">
                         @else
                             <img src="/img/{{ auth()->user()->gender == 'Laki-laki' ? 'male-avatar.jpg' : 'female-avatar.jpg' }}"
                                 alt="avatar" class="rounded-circle img-fluid profile-img">
-                        @endif
+                        @endisset
                         <h5 class="mt-3">{{ auth()->user()->username }}</h5>
                         <div class="container">
                             @can('admin')
                                 <p class="badge badge-info">Admin</p>
                                 <br>
-                                <a class="btn btn-info" href="{{ route('dashboard') }}" role="button"><i
-                                        class="fa-solid fa-chart-line"></i> Dashboard</a>
+                                <a class="btn btn-info" href="{{ route('dashboard') }}" role="button">
+                                    <i class="fa-solid fa-chart-line"></i> Dashboard
+                                </a>
                             @else
                                 <p class="badge badge-success">User</p>
                             @endcan
@@ -60,8 +61,8 @@
                             </div>
                             <div class="col-sm-9 d-flex justify-content-between align-items-center">
                                 <p class="text-muted mb-0">{{ auth()->user()->username }}</p>
-                                <a class="pulse-animated-btn" id="edit_username" data-bs-toggle="modal" data-bs-target="#modal"
-                                    href="">Edit</i></a>
+                                <a class="pulse-animated-btn" id="edit_username" data-bs-toggle="modal"
+                                    data-bs-target="#modal" href="">Edit</i></a>
                             </div>
                         </div>
                         <hr>
@@ -80,8 +81,8 @@
                             </div>
                             <div class="col-sm-9 d-flex justify-content-between align-items-center">
                                 <p class="text-muted mb-0">{{ auth()->user()->gender }}</p>
-                                <a class="pulse-animated-btn" id="edit_gender" data-bs-toggle="modal" data-bs-target="#modal"
-                                    href="">Edit</a>
+                                <a class="pulse-animated-btn" id="edit_gender" data-bs-toggle="modal"
+                                    data-bs-target="#modal" href="">Edit</a>
                             </div>
                         </div>
                         <hr>
@@ -91,8 +92,8 @@
                             </div>
                             <div class="col-sm-9 d-flex justify-content-between align-items-center">
                                 <p class="text-muted mb-0">(+62) {{ auth()->user()->number }}</p>
-                                <a class="pulse-animated-btn" id="edit_number" data-bs-toggle="modal" data-bs-target="#modal"
-                                    href="">Edit</a>
+                                <a class="pulse-animated-btn" id="edit_number" data-bs-toggle="modal"
+                                    data-bs-target="#modal" href="">Edit</a>
                             </div>
                         </div>
                         <hr>
@@ -111,8 +112,8 @@
                             </div>
                             <div class="col-sm-9 d-flex justify-content-between align-items-center">
                                 <p class="text-muted mb-0">**************</p>
-                                <a class="pulse-animated-btn" id="edit_password" data-bs-toggle="modal" data-bs-target="#modal"
-                                    href="">Edit</a>
+                                <a class="pulse-animated-btn" id="edit_password" data-bs-toggle="modal"
+                                    data-bs-target="#modal" href="">Edit</a>
                             </div>
                         </div>
                     </div>

@@ -3,7 +3,7 @@
         <p class="col-md-4 mb-0 text-dark">
             Bandung 
             <i class="fa-regular fa-copyright"></i> 
-            2022, dibuat dengan 
+            2023, dibuat dengan 
             <i class="fa-solid fa-heart text-danger"></i> 
             oleh Kelompok 5
         </p>

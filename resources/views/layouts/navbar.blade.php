@@ -29,68 +29,38 @@
                 <li class="nav-item nav-padding px-2">
                     <a class="nav-link" aria-current="page" data-mdb-toggle="tooltip" data-mdb-placement="bottom"
                         title="Homepage" href="/">
-                        @if (Request::is('/'))
-                            <i class="fa-lg fa-solid fa-house"></i>
-                        @else
-                            <i class="fa-lg fa-regular fa-house"></i>
-                        @endif
+                        <i class="fa-lg fa-{{ Request::is('/') ? 'solid' : 'regular' }} fa-house"></i>
                     </a>
                 </li>
                 @if (Request::is('admin/dashboard*'))
                     <li class="nav-item nav-padding px-2">
                         <a class="nav-link" aria-current="page" data-mdb-toggle="tooltip" data-mdb-placement="bottom"
                             title="Manage catalog" href="{{ route('catalog') }}">
-                            @if (Request::is('admin/dashboard/catalog*'))
-                                <i class="fa-lg fa-solid fa-store"></i>
-                            @else
-                                <i class="fa-lg fa-regular fa-store"></i>
-                            @endif
+                            <i
+                                class="fa-lg fa-{{ Request::is('admin/dashboard/catalog*') ? 'solid' : 'regular' }} fa-store"></i>
                         </a>
                     </li>
                     <li class="nav-item nav-padding px-2">
                         <a class="nav-link" aria-current="page" data-mdb-toggle="tooltip" data-mdb-placement="bottom"
                             title="Manage users" href="{{ route('users') }}">
-                            @if (Request::is('admin/dashboard/users*'))
-                                <i class="fa-lg fa-solid fa-users-gear"></i>
-                            @else
-                                <i class="fa-lg fa-light fa-users-gear"></i>
-                            @endif
+                            <i class="fa-lg fa-{{ Request::is('admin/dashboard/users*') ? 'solid' : 'regular' }} fa-user-gear"></i>
                         </a>
                     </li>
                 @else
                     <li class="nav-item nav-padding px-2">
-                        @if (Request::is('wishlist*'))
-                            <a class="nav-link" aria-current="page" data-mdb-toggle="tooltip"
-                                data-mdb-placement="bottom" title="Wishlist" href="{{ route('wishlist') }}">
-                                <i class="fa-lg fa-solid fa-heart"></i>
-                                <span id="total_wishlist_badge"
-                                    class="badge rounded-pill badge-notification bg-danger"></span>
-                            </a>
-                        @else
-                            <a class="nav-link" aria-current="page" data-mdb-toggle="tooltip"
-                                data-mdb-placement="bottom" title="Wishlist" href="{{ route('wishlist') }}">
-                                <i class="fa-lg fa-regular fa-heart"></i>
-                                <span id="total_wishlist_badge"
-                                    class="badge rounded-pill badge-notification bg-danger"></span>
-                            </a>
-                        @endif
+                        <a class="nav-link" aria-current="page" data-mdb-toggle="tooltip" data-mdb-placement="bottom"
+                            title="Wishlist" href="{{ route('wishlist') }}">
+                            <i class="fa-lg fa-{{ Request::is('wishlist*') ? 'solid' : 'regular' }} fa-heart"></i>
+                            <span id="total_wishlist_badge"
+                                class="badge rounded-pill badge-notification bg-danger"></span>
+                        </a>
                     </li>
                     <li class="nav-item nav-padding px-2">
-                        @if (Request::is('cart*'))
-                            <a class="nav-link" aria-current="page" data-mdb-toggle="tooltip"
-                                data-mdb-placement="bottom" title="Cart" href="{{ route('cart') }}">
-                                <i class="fa-lg fa-solid fa-cart-shopping"></i>
-                                <span id="total_cart_badge"
-                                    class="badge rounded-pill badge-notification bg-danger"></span>
-                            </a>
-                        @else
-                            <a class="nav-link" aria-current="page" data-mdb-toggle="tooltip"
-                                data-mdb-placement="bottom" title="Cart" href="{{ route('cart') }}">
-                                <i class="fa-lg fa-regular fa-cart-shopping"></i>
-                                <span id="total_cart_badge"
-                                    class="badge rounded-pill badge-notification bg-danger"></span>
-                            </a>
-                        @endif
+                        <a class="nav-link" aria-current="page" data-mdb-toggle="tooltip" data-mdb-placement="bottom"
+                            title="Cart" href="{{ route('cart') }}">
+                            <i class="fa-lg fa-{{ Request::is('cart*') ? 'solid' : 'regular' }} fa-cart-shopping"></i>
+                            <span id="total_cart_badge" class="badge rounded-pill badge-notification bg-danger"></span>
+                        </a>
                     </li>
                 @endif
                 <li class="nav-item nav-padding px-2">

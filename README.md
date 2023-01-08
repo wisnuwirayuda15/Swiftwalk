@@ -6,28 +6,26 @@ Repository ini dibuat bertujuan untuk memenuhi tugas besar mata kuliah Pengemban
 
 ## Here's some preview of our work
 
-![Login](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/7.png)
+![Login](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/login.png)
 
-![Register](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/8.png)
+![Register](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/register.png)
 
-![Homepage](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/1.png)
+![Homepage](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/homepage.png)
 
-![Homepage Login](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/1.png)
+![Search](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/search.png)
 
-![Detail](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/2.png)
+![Detail](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/detail.png)
 
-![Profile](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/3.png)
+![Profile](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/profile.png)
 
-![Wishlist](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/3.png)
+![Wishlist](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/wishlist.png)
 
-![Wishlist Empty](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/3.png)
+![Cart](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/cart.png)
 
-![Cart](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/3.png)
+![Dashboard](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/dashboard.png)
 
-![Cart Empty](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/3.png)
+![Dashboard: Catalog](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/catalog.png)
 
-![Dashboard](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/4.png)
+![Dashboard: Add Catalog](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/add-catalog.png)
 
-![Dashboard: Catalog](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/5.png)
-
-![Dashboard: Users](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/6.png)
+![Dashboard: Users](https://github.com/wisnuwirayuda15/TUBES_WAD/raw/master/public/img/screenshots/users.png)

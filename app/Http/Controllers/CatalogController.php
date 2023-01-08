@@ -142,9 +142,8 @@ class CatalogController extends Controller
                 'image' => ['image', 'file', 'max:5120', 'required'],
                 'name' => ['min:3', 'max:50', 'required'],
                 'description' => ['required'],
-                'price' => ['numeric', 'required'],
+                'price' => ['numeric', 'max:100000000', 'required'],
             ],
-
             array(
                 'image.required' => 'Gambar produk wajib dipilih.',
                 'image.image' => 'File tidak didukung.',
@@ -154,6 +153,7 @@ class CatalogController extends Controller
                 'description.required' => 'Deskripsi produk harus diisi.',
                 'price.numeric' => 'Harga produk harus berupa angka',
                 'price.required' => 'Harga produk harus diisi',
+                'price.max' => 'Harga maksimal yang dapat diinputkan adalah Rp 100.000.000,-'
             )
         );
         $image = str_pad(random_int(0, 9999999999), 15, '0', STR_PAD_LEFT) . '.' . $request->image->extension();
@@ -188,7 +188,7 @@ class CatalogController extends Controller
             [
                 'name' => ['min:3', 'max:50', 'required'],
                 'description' => ['required'],
-                'price' => ['numeric', 'required'],
+                'price' => ['numeric', 'max:100000000', 'required'],
             ],
             array(
                 'name.required' => 'Nama produk harus diisi.',
@@ -197,6 +197,7 @@ class CatalogController extends Controller
                 'description.required' => 'Deskripsi produk harus diisi.',
                 'price.numeric' => 'Harga produk harus berupa angka',
                 'price.required' => 'Harga produk harus diisi',
+                'price.max' => 'Harga maksimal yang dapat diinputkan adalah Rp 100.000.000,-'
             )
         );
         $item = Catalog::find($id);
