@@ -94,6 +94,7 @@
                 paging: true,
                 searching: true,
                 info: true,
+                stateSave: true,
                 lengthMenu: [ 5, 10, 25, 50, 100 ]
             });
             $('.dataTables_scroll').addClass('mb-4');

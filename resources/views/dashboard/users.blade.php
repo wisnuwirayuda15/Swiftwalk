@@ -90,8 +90,13 @@
         //Data Tables
         $(document).ready(function() {
             $('#users_table').DataTable({
+                pageLength: 5,
                 scrollX: true,
+                paging: true,
+                searching: true,
+                info: true,
                 stateSave: true,
+                lengthMenu: [ 5, 10, 25, 50, 100 ]
             });
             $('.dataTables_scroll').addClass('mb-4');
             $('.dataTables_length').addClass('mb-4');
