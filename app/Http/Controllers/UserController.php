@@ -3,14 +3,9 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use App\Models\Cart;
 use App\Models\User;
-use App\Models\Catalog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use PhpParser\Node\Expr\Cast\Array_;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Contracts\Auth\UserProvider;
 
 class UserController extends Controller
 {
