@@ -72,7 +72,7 @@ class UserController extends Controller
                 'number' => ['numeric'],
                 'password' => ['min:8', 'same:password_confirmation']
             ],
-            $messages = array(
+            array(
                 'password.same' => 'Konfirmasi password tidak sesuai.',
                 'number.numeric' => 'Nomor hp harus berupa angka.',
                 'password.min' => 'Password minimal 8 karakter.',
@@ -136,7 +136,7 @@ class UserController extends Controller
                 [
                     'number' => ['numeric']
                 ],
-                $messages = array(
+                array(
                     'number.numeric' => 'Nomor hp harus berupa angka.'
                 )
             );
@@ -150,7 +150,7 @@ class UserController extends Controller
                     [
                         'password' => ['min:8', 'same:password_confirmation']
                     ],
-                    $messages = array(
+                    array(
                         'password.min' => 'Password minimal 8 karakter.',
                         'password.same' => 'Konfirmasi password tidak sesuai.',
                     )
@@ -184,8 +184,8 @@ class UserController extends Controller
 
     public function destroy()
     {
-        @unlink(public_path('/img/avatar/') . auth()->user()->avatar);
         User::find(auth()->user()->id)->delete();
+        @unlink(public_path('/img/avatar/') . auth()->user()->avatar);
         return redirect('/')
             ->with('alert', 'success')
             ->with('text', 'Akun anda berhasil dihapus');
