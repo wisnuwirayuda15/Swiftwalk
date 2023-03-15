@@ -268,8 +268,6 @@ $('button#minus_btn').click(function () {
 
 
 
-$(document).ready(function () {
-    $(window).on('load', function () {
-        $('.loading-animation').fadeOut('slow');
-    });
+$(window).on('load', function () {
+    $('.loading-animation').fadeOut('slow');
 });
